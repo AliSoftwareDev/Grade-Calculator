@@ -1,8 +1,9 @@
-# Interactive Quiz Application
+# Grade Calculator Application
 
-Kullanıcıların bilgilerini test etmesini sağlayan, dinamik soru yapısına ve anlık skor takibine sahip **Vanilla JavaScript** ile geliştirilmiş interaktif bilgi yarışması uygulaması.
+Öğrencilerin vize, final ve ödev notlarını girerek dönem sonu başarı notunu ve harf notunu (AA, BA, FF vb.) hesaplamalarını sağlayan **Vanilla JavaScript** ile geliştirilmiş interaktif not hesaplama uygulaması.
 
 ---
+
 
 ## 📸 Ekran Görüntüsü
 
@@ -13,35 +14,35 @@ Kullanıcıların bilgilerini test etmesini sağlayan, dinamik soru yapısına v
 
 ## 🚀 Özellikler
 
-* **Dinamik Soru Yükleme:** Soruların ve şıkların veritabanı veya nesne dizisinden (Array of Objects) dinamik olarak DOM'a aktarılması.
-* **Anlık Şık Kontrolü & Skor Hesaplama:** Doğru/yanlış cevapların anında değerlendirilmesi ve kullanıcıya toplam skorun gösterilmesi.
-* **Seçim Zorunluluğu:** Kullanıcı bir şık seçmeden sonraki soruya geçilmesini engelleyen doğrulama (validation) mekanizması.
-* **Yeniden Başlatma (Restart):** Quiz bitiminde skoru sıfırlayıp testi baştan başlatma seçeneği.
-* **Responsive Arayüz:** Mobil ve masaüstü ekranlarda sorunsuz çalışan kart tasarımı.
+* **Dinamik Not Hesaplama:** Vize (%40) ve Final (%60) ağırlıklarına göre dönem sonı notunun otomatik hesaplanması.
+* **Harf Notu Değerlendirmesi:** Hesaplanan ortalamaya göre standart 4'lük/100'lük sisteme uygun harf notu (AA, BA, BB, CB, CC, DC, DD, FD, FF) karşılığının verilmesi.
+* **Baraj & Geçme/Kalma Durumu:** Geçme notu sınırına göre kullanıcının dersi geçip geçmediğinin anlık olarak renkli rozetlerle (Badge) gösterilmesi.
+* **Form Doğrulama (Validation):** 0-100 aralığı dışında değer girilmesini engelleyen ve eksik alanları uyaran kontrol mekanizması.
+* **Responsive Arayüz:** Tüm mobil ve masaüstü cihazlarla tam uyumlu, kullanıcı dostu form tasarımı.
 
 ---
 
 ## 🛠️ Teknolojik Mimari
-
-* **HTML5:** Form elemanları, radyo butonları ve semantik yapı.
-* **CSS3:** Card layout, Flexbox, custom radio button stilleri ve responsive medya sorguları.
+* **HTML5:** Semantik form elemanları, input türleri (`number`) ve yapısal etiketler.
+* **CSS3:** Flexbox/Grid düzeni, custom input stilleri ve durum bildirim renkleri (Yeşil/Kırmızı geçme-kalma durumları).
 * **Vanilla JavaScript (ES6+):** 
-  * Array & Object manipülasyonu
-  * DOM seçicileri ve dinamik içerik basma (`innerHTML`, `innerText`)
-  * Event Listeners ve koşullu durum yönetimi (State)
+  * Form event yönetimi (`submit`, `input`)
+  * Matematiksel ağırlıklı ortalama algoritmaları
+  * Dinamik sınıf ve stil güncellemeleri (DOM Manipulation)
+
 
 ---
 
 ## 📂 Proje Dosya Yapısı
 
 ```text
-quiz-app/
+grade-calculator/
 │
 ├── assets/
-│   └── preview.png       # Proje ekran görüntüsü
-├── index.html            # İskelet ve kart yapısı
-├── hesaplam.css             # Arayüz ve seçim stilleri
-├── hesaplama.js             # Soru verileri, skor ve ilerleme mantığı
-└── README.md             # Dokümantasyon
+│   └── preview.png       # README ekran görüntüsü
+├── index.html            # Form ve sonuç alanı yapısı
+├── style.css             # Arayüz, form ve kart stilleri
+├── script.js             # Hesaplama algoritmaları ve doğrulama mantığı
+└── README.md             # Proje dokümantasyonu
 
 
